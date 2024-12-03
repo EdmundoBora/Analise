@@ -6,7 +6,7 @@ async function redesSociaisFavoritasMinhaEscola() {
         const dadosLocais = JSON.parse(dadosLocaisString)
         processarDados(dadosLocais)
     } else {
-        const url = 'https://script.googleusercontent.com/macros/echo?user_content_key=rSe23zaQC7gOvWgFJbdtPaqh7ewsO5hQmusYOeqdorTRN8C25vVV3BicsPoS6HS3jnJY9NHhy_pNZj6prQdxDH3305Mro8vNm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnPvESZ9fvnAeFWqfIvIacdoRZcVMZ-nDSydw9_0gseo2TN3y60rOTtwDBCYnKQf6yIqgf8yOzNfccjP633C9VnHmUmPZvRBJY9z9Jw9Md8uu&lib=MCARBaBtNBMHKiEwMeRap3j6V_G7SlGWF'
+        const url = 'https://raw.githubusercontent.com/EdmundoBora/Api-planilhas-/refs/heads/main/dados-escola.json'
         const res = await fetch(url)
         const dados = await res.json()
         localStorage.setItem('respostaRedesSociais', JSON.stringify(dados))
@@ -37,7 +37,7 @@ function processarDados(dados) {
         paper_bgcolor: getCSS('--bg-color'),
         height: 700,
         title: {
-            text: 'Redes sociais que as pessoas da minha escola mais gostam',
+            text: 'Quais as refeições que minha escola mais gosta.',
             x: 0,
             font: {
                 color: getCSS('--primary-color'),
@@ -54,7 +54,7 @@ function processarDados(dados) {
     }
 
     criarGrafico(data, layout)
-    incluirTexto(`Como no mundo, a amostra de pessoas entrevistadas por mim, demonstra um apreço pelo <span>Instagram</span> em relação a outras redes.`)
+    incluirTexto(` A amostra de pessoas entrevistadas por mim, demonstra um apreço pelo <span>Churrasco</span> em relação aos outros pratos.`)
 }
 
 redesSociaisFavoritasMinhaEscola()

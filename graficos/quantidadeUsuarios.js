@@ -1,7 +1,7 @@
 import { getCSS, tickConfig, criarGrafico } from "./common.js"
 
 async function quantidadeUsuariosPorRede() {
-    const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/numero-usuarios.json'
+    const url = 'https://raw.githubusercontent.com/EdmundoBora/Api-planilhas-/refs/heads/main/numero-usuarios.json'
     const res = await fetch(url)
     const dados = await res.json()
     const nomeDasRedes = Object.keys(dados)
@@ -22,7 +22,7 @@ async function quantidadeUsuariosPorRede() {
         plot_bgcolor: getCSS('--bg-color'),
         paper_bgcolor: getCSS('--bg-color'),
         title: {
-            text: 'Redes sociais com mais usuários no mundo',
+            text: 'As Comidas mais favoritas dos brasileiros.',
             x: 0,
             font: {
                 color: getCSS('--primary-color'),
@@ -33,7 +33,7 @@ async function quantidadeUsuariosPorRede() {
         xaxis: {
             tickfont: tickConfig,
             title: {
-                text: 'nome das redes sociais',
+                text: 'Nome dos pratos.',
                 font: {
                     color: getCSS('--secondary-color')
                 }
@@ -42,7 +42,7 @@ async function quantidadeUsuariosPorRede() {
         yaxis: {
             tickfont: tickConfig,
             title: {
-                text: 'bilhões de usuários ativos',
+                text: 'Pratos Preferidos.',
                 font: {
                     color: getCSS('--secondary-color')
                 }
